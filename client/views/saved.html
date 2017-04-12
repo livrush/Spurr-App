@@ -1,8 +1,10 @@
-<!-- <button ng-click="get('hey')">Yo buddy</button><br> -->
+<!DOCTYPE html>
 
+<label>Search: <input type="text" ng-model="searchText"></label>
 <div id="savedSpurrHolder">
-
-  <div class="spurr" ng-style="secret.outer_style" ng-repeat="secret in secrets track by $index">
+  <div class="spurr"
+    ng-style="secret.outer_style"
+    ng-repeat="secret in secrets | filter:searchText">
     <div class="upper" ng-style="secret.inner_style">
       <ul class="msgText">
         <li class="left">{{ secret.location }}</li>
@@ -10,10 +12,29 @@
       </ul>
     </div>
     <div ng-style="secret.inner_style">
-      <p>{{ secret.recipient }}</p>
+      <p class="left">{{ secret.recipient }}</p>
       <p>{{ secret.message }}</p>
-      <p>{{ secret.sender }}</p>
+      <p class="right">{{ secret.sender }}</p>
+    </div>
+    <div class="shareButtons">
+      <input
+        class="shareIcon"
+        type="image"
+        src="../assets/fb-icon.png"
+        ng-click="socialShare(secret, 'facebook')"
+      />
+      <input
+        class="shareIcon"
+        type="image"
+        src="../assets/twitter-icon.png"
+        ng-click="socialShare(secret, 'twitter')"
+      />
+      <input
+        class="shareIcon"
+        type="image"
+        src="../assets/delete-icon.png"
+        ng-click="test(secret)"
+      />
     </div>
   </div>
-
 </div>

@@ -1,7 +1,9 @@
+ /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
+require('dotenv').config();
 const app = require('./server-config.js');
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 app.listen(PORT);
 
-console.log(`Listening on http://localhost:${PORT}`);
+console.warn(`Listening on http://localhost:${PORT}`);

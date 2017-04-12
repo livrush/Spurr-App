@@ -1,11 +1,15 @@
 FROM node
-RUN npm install -g --silent bower
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-COPY package.json /user/src/app
+RUN mkdir -p /app
+
+COPY . /app
+
+WORKDIR /app
+
+COPY package.json /app
+
 RUN npm install
-RUN bower install
-COPY . /usr/src/app
 
-EXPOSE 5000
+EXPOSE 3000 80 443
+
+CMD npm start

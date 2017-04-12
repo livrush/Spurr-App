@@ -58,23 +58,27 @@ table {
 }
 
 button {
-  background: #c3dfeb;
-  border: 2px solid #ffafaf;
-  /*border-width: 1px;*/
+  color: #fff;
+  font-weight: bold;
   border-radius: 5px;
+  background: #ffafaf;
+  border: 2px solid #ffafaf;
 }
 
 select {
-  background: #ffafaf;
-  border: 2px solid #c3dfeb;
+  color: #ffafaf;
+  font-size: small;
+  font-weight: bold;
   border-radius: 5px;
+  background: transparent;
+  border: 2px dotted #c3dfeb;
 }
 
 .bigButton {
   font-family: Jazz Ball;
-  color: #eee;
-  background: #ffafaf;
-  border: 5px solid #c3dfeb;
+  color: #ffafaf;
+  background: transparent;
+  border: 5px dotted #c3dfeb;
   border-radius: 20px;
   padding: 10px;
   margin: 10px;
@@ -90,13 +94,26 @@ select {
 }
 
 .spurr {
-  background-size: 100%;
   width: 360px;
   height: 226px;
   padding: 20px;
-  background-color: yellow;
   margin-top: 25px;
+  position: relative;
   margin-bottom: 25px;
+  background-size: 100%;
+  background-color: transparent;
+  box-shadow: 2px 2px 15px #888888;
+}
+
+.shareButtons {
+  position: absolute;
+  top: 275px;
+  right: 15px;
+  width: 75px;
+}
+
+.shareIcon {
+  width: 29%;
 }
 
 .upper {
@@ -104,29 +121,51 @@ select {
 }
 
 .confess {
+  width: 800px;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  width: 850px;
 }
 
 .interface {
-  width: 201px;
-  height: 376px;
+  width: 250px;
   padding: 12px;
+  background: #fff;
+  margin-right: 25px;
+  border-radius: 15px;
 }
 
 .interface input {
-  background: transparent;
   border: none;
-  border-bottom: 2px dotted #c3dfeb;
+  padding: 4.5px;
+  background: #eee;
+  border-radius: 5px;
 }
 
 .message {
-  width: 540px;
-  height: 340px;
+  width: 440px;
+  height: 270px;
   padding: 30px;
   background: #eee;
+  background-position-y: 50%;
+  background-position-x: 50%;
+  background-size: 500px 330px;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-shadow: 2px 2px 15px #888888;
+}
+
+.message input {
+  border-bottom: #ddd 1px solid;
+  width: 50%;
+}
+
+.msgText.left {
+  float: left;
+}
+
+.msgText.right  {
+  float: right;
 }
 
 .message, .message input, textarea {
@@ -134,11 +173,11 @@ select {
 }
 
 .msgText, .left, .right {
+  outline: 0;
   width: 100%;
-  text-align: center;
   border: none;
   background: none;
-  outline: 0;
+  text-align: center;
 }
 
 .left {
@@ -149,17 +188,14 @@ select {
   text-align: right;
 }
 
-#msgbody {
-  width: 480px;
-  /*height: 210px;*/
-}
-
 #receivedMessage {
-  background: pink;
-  margin:auto;
-  width: 576px;
-  height: 376px;
-  padding: 12px;
+  margin: auto;
+  width: 540px;
+  height: 340px;
+  padding: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 #about {
@@ -175,4 +211,50 @@ h2 {
 form {
   width: 250px;
   margin: auto;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  padding-top: 100px; /* Location of the box */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  width: 70%;
+  margin: auto;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #eee;
+}
+.modal-search {
+  width: 30%;
+  margin: auto;
+  padding: 15px;
+  background-color: #eee;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.modal-item {
+  width: 30%;
+  padding: 1.6%;
+  background-color: #ffafaf;
+}
+.modal-item:hover{
+  background-color: #c3dfeb;
+}
+.modalimage {
+  max-height: 100%;
+  max-width: 100%;
 }
