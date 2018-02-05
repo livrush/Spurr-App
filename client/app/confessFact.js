@@ -9,7 +9,7 @@ angular.module('Confess-Fact', [])
   const postSpurr = function post(secret) {
     return $http({
       method: 'POST',
-      url: '/api/spurrs',
+      url: '/api/spurr',
       data: secret,
     }).then((res) => {
       console.log('success', res);
