@@ -9,9 +9,9 @@
   },
   "scripts": {
     "postinstall": "grunt uglify",
-    "start": "node server.js",
-    "dev": "nodemon server.js",
-    "db": "mysql -u root < schema.sql && node server.js",
+    "server": "node server.js",
+    "devserver": "nodemon server.js",
+    "db": "mysql -u root < schema.sql && node server.js"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
