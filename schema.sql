@@ -1,3 +1,7 @@
+/*  Execute this file from the command line by typing:
+ *    mysql -u root < schema.sql
+ *  to create the database and the tables.*/
+
 -- DROP DATABASE spurr;
 
 CREATE DATABASE spurr;
@@ -52,12 +56,6 @@ CREATE TABLE user_saved_spurrs (
   foreign key(user_id) references users (user_id),
   foreign key(spurr_id) references saved_spurrs (spurr_id)
 );
-
-/* Create other tables and define schemas for them here! */
-
-/*  Execute this file from the command line by typing:
- *    mysql -u root < schema.sql
- *  to create the database and the tables.*/
 
 INSERT INTO users (username, location) VALUES ("liv", 'new orleans');
 
