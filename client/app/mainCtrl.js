@@ -24,7 +24,7 @@ angular.module('Spurr-Ctrl', [])
    * Redirects user to root
    */
   $scope.signout = function () {
-    $window.localStorage.clear();
+    $window.localStorage.clear;
     $location.path('/');
   };
 });
