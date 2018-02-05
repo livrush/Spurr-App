@@ -41,7 +41,6 @@ angular.module('Auth-Ctrl', [])
     return $http({
       method: 'POST',
       url: '/api/users/signin',
-      data: user,
     })
     .then(resp => resp.data.token);
   };
@@ -49,7 +48,7 @@ angular.module('Auth-Ctrl', [])
   const signUpUser = function (user) {
     return $http({
       method: 'POST',
-      url: '/api/users/signup',
+      url: null,
       data: user,
     })
     .then(resp => resp.data.token);
